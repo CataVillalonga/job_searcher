@@ -12,10 +12,9 @@
           </ul>
         </nav>
         <div class=" ml-auto flex h-full items-center">
-          <!-- v-for directive for conditions rendering of components, if the statement inside the directive translate to true then the component will render 
-          if the statement translate to false it will not render -->
-          <action-btn v-if="isLoggedin"/>
-          <profile-img v-if="!isLoggedin"/>
+          <!-- v-else directive can only be use with a v-if directive (!) and it simulates a if/else statement-->
+          <profile-img v-if="isLoggedin"/>
+          <action-btn v-else/>
         </div>
       </div>
     </div>
@@ -24,7 +23,7 @@
 
 <script>
 import ActionBtn from '@/components/ActionBtn.vue';
-import ProfileImg from '@/components//ProfileImg.vue';
+import ProfileImg from '@/components/ProfileImg.vue';
 export default {
   name: 'MainNav',
   components:{
