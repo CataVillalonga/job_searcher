@@ -14,8 +14,8 @@
         <div class=" ml-auto flex h-full items-center">
           <!-- v-for directive for conditions rendering of components, if the statement inside the directive translate to true then the component will render 
           if the statement translate to false it will not render -->
-          <action-btn v-if="true"/>
-          <profile-img v-if="false"/>
+          <action-btn v-if="isLoggedin"/>
+          <profile-img v-if="!isLoggedin"/>
         </div>
       </div>
     </div>
@@ -36,6 +36,7 @@ export default {
       company: 'Cata Careers',
       url : "https://careers.google.com/",
       navBarItems:["Teams","Location","Life at Cata Corp","How we hire","Students","Jobs"],
+      isLoggedin: false
     };
   }
 };
