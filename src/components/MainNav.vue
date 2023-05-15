@@ -21,10 +21,12 @@
 
 <script>
 import ActionBtn from '@/components/ActionBtn.vue';
+import ProfileImg from '@/components//ProfileImg.vue';
 export default {
   name: 'MainNav',
   components:{
     ActionBtn,
+    ProfileImg
   },
   data() {
     return {
