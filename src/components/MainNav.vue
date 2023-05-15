@@ -5,22 +5,27 @@
         <a :href="url" class="flex h-full items-center text-xl">{{ company }}</a>
         <nav class="ml-12 h-full">
           <ul class="flex h-full list-none">
-          <!-- declaring the key attribute just as in react  -->
-            <li v-for=" navBarItem in navBarItems"  v-bind:key="navBarItem" class="h-full ml-9">
-              <!-- dinamically calling items on array to create navbar -->
+            <li v-for=" navBarItem in navBarItems"  v-bind:key="navBarItem" class="h-full ml-9 first:ml-0">
               <a href="/" class=" flex h-full items-center py-2.5">{{ navBarItem }}</a>
             </li>
 
           </ul>
         </nav>
+        <div class=" ml-auto flex h-full items-center">
+          <action-btn />
+        </div>
       </div>
     </div>
   </header>
 </template>
 
 <script>
+import ActionBtn from '@/components/ActionBtn.vue';
 export default {
   name: 'MainNav',
+  components:{
+    ActionBtn,
+  },
   data() {
     return {
       company: 'Cata Careers',
