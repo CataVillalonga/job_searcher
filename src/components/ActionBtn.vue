@@ -4,6 +4,12 @@
 
 <script>
 export default {
-  name: 'ActionBtn'
+  name: 'ActionBtn',
+  // defining "methods" AKA functions to be use in the component
+  methods: {
+    handleClick() {
+      console.log('Btn clicked!')
+    }
+  }
 }
 </script>
