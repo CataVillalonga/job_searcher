@@ -12,7 +12,7 @@
           </ul>
         </nav>
         <div class=" ml-auto flex h-full items-center">
-          <!-- v-else directive can only be use with a v-if directive (!) and it simulates a if/else statement-->
+          <!-- v-else directive can only be use with a v-if directive (!) and it simulates a if/else statement and it doesnt require to have a statement-->
           <profile-img v-if="isLoggedin"/>
           <action-btn v-else/>
         </div>
