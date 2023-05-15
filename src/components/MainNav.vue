@@ -12,9 +12,9 @@
           </ul>
         </nav>
         <div class=" ml-auto flex h-full items-center">
-          <!-- v-else directive can only be use with a v-if directive (!) and it simulates a if/else statement and it doesnt require to have a statement-->
-          <profile-img v-if="isLoggedin"/>
-          <action-btn v-else/>
+          <profile-img v-if="isLoggedin" />
+          <!-- v-on CAN be call in a component declaration , IT ISNT limited to only be use in html elements  -->
+          <action-btn v-else @click="loginUser"/>
         </div>
       </div>
     </div>
@@ -37,6 +37,12 @@ export default {
       navBarItems:["Teams","Location","Life at Cata Corp","How we hire","Students","Jobs"],
       isLoggedin: false
     };
+  }, 
+  //data properties can be change, reference and overwritten inside methods by using the this. keyword
+  methods: {
+    loginUser () {
+      this.isLoggedin = true
+    }
   }
 };
 </script>
