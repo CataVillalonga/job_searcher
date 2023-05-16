@@ -1,24 +1,29 @@
 <template>
-  <!-- using v-bind to dinamically select styles within obj definition
-   connects the css class declaration to the data property value primary-->
-    <button :class="{primary:primary}">{{ text }}</button>
+  <!-- v-bind to connect to computer property -->
+    <button :class="buttonClass">{{ text }}</button>
 </template>
 
 <script>
 export default {
   name: 'ActionBtn',
-  //defining the prop(s) coming from the parent in the child 
   props:["text"],
   data() {
     return {
       primary: true
     }
   },
+  // defining computed property 
+  computed: {
+    buttonClass () {
+      return {
+        primary : this.primary
+      }
+    }
+  }
 }
 </script>
-<!-- Adding scoped attr. to make sure styles stay in the component ( as css can be global) -->
+
 <style scoped>
-/* @apply is a tailwing directive that lets you write tailwing classes within our css declarations */
 button{
  @apply rounded px-5 py-3 font-medium;
 }
