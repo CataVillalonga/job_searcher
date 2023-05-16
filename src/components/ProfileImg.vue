@@ -1,5 +1,5 @@
 <template>
-    <img  class="h-10 w-10 rounded-3xl object-contain" :src="imgLink" alt="">
+    <img  class="h-10 w-10 rounded-3xl object-contain" :src="imgLink" alt="User profile image">
 </template>
 
 <script>
