@@ -6,17 +6,14 @@
 <script>
 export default {
   name: 'ActionBtn',
-  props:["text"],
-  data() {
-    return {
-      primary: true
-    }
-  },
+  //vue auto translate kebab-case till upperCase
+  props:['text','isPrimary'],
   // defining computed property 
   computed: {
     buttonClass () {
       return {
-        primary : this.primary
+        primary : this.isPrimary,
+        secondary: !this.isPrimary
       }
     }
   }
@@ -32,6 +29,6 @@ button{
 }
 
 .secondary {
-
+  @apply bg-transparent text-brand-blue-1  hover:bg-brand-blue-2 hover:text-white
 }
 </style>
