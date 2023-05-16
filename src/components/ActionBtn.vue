@@ -6,7 +6,7 @@
 <script>
 export default {
   name: 'ActionBtn',
-  //defining the prop coming from the parent in the child 
+  //defining the prop(s) coming from the parent in the child 
   props:["text"]
 
 }
