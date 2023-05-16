@@ -13,8 +13,8 @@
         </nav>
         <div class=" ml-auto flex h-full items-center">
           <profile-img v-if="isLoggedin" />
-          <!-- v-on CAN be call in a component declaration , IT ISNT limited to only be use in html elements  -->
-          <action-btn v-else @click="loginUser"/>
+          <!-- using the text prop to make the btn dinamic -->
+          <action-btn v-else @click="loginUser" text="Sign in"/>
         </div>
       </div>
     </div>
@@ -38,7 +38,6 @@ export default {
       isLoggedin: false
     };
   }, 
-  //data properties can be change, reference and overwritten inside methods by using the this. keyword
   methods: {
     loginUser () {
       this.isLoggedin = true

@@ -20,7 +20,6 @@ describe('MainNav', () => {
 describe('when the users logs in', () => {
   it('Displays user profile picture', async () => {
     render(MainNav);
-    // in imgs the name is whatever is written inside the alt attribute
     let profileImg = screen.queryByRole('img', {
       name: /User profile image/i
     });
@@ -29,7 +28,6 @@ describe('when the users logs in', () => {
     const loginBtn = screen.getByRole('button', {
       name: /sign in/i
     })
-    //with btns the name is what is written inside the btn
     profileImg = screen.queryByRole('img', {
       name: /User profile image/i
     });
