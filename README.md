@@ -1,41 +1,16 @@
 # job_searcher
 
-This template should help get you started developing with Vue 3 in Vite.
+## Codebase/ techstack 
 
-## Recommended IDE Setup
+The purpuse of this project is to learn Vue, pinia and vitests as part of the ombording process of my new job. 
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+-Almost verycommit is an explanation and implementation of a Vue concept, and it goes from Vue2 all the Way to vue3.
 
-## Customize configuration
+The end goal is to make a clone of the google careeer website. 
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Design 
 
-## Project Setup
+- Design was not the main goal so I decided to use tailwin. 
 
-```sh
-npm install
-```
 
-### Compile and Hot-Reload for Development
 
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```

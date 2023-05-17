@@ -1,5 +1,4 @@
 <template>
-  <!-- v-bind to connect to computer property -->
     <button :class="buttonClass">{{ text }}</button>
 </template>
 
