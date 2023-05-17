@@ -5,21 +5,21 @@
         <a :href="url" class="flex h-full items-center text-xl">{{ company }}</a>
         <nav class="ml-12 h-full">
           <ul class="flex h-full list-none">
-            <li v-for=" navBarItem in navBarItems"  v-bind:key="navBarItem" class="h-full ml-9 first:ml-0">
-              <a href="/" class=" flex h-full items-center py-2.5">{{ navBarItem }}</a>
+            <li
+              v-for="navBarItem in navBarItems"
+              v-bind:key="navBarItem"
+              class="ml-9 h-full first:ml-0"
+            >
+              <a href="/" class="flex h-full items-center py-2.5">{{ navBarItem }}</a>
             </li>
-
           </ul>
         </nav>
-        <div class=" ml-auto flex h-full items-center">
+        <div class="ml-auto flex h-full items-center">
           <profile-img v-if="isLoggedin" />
-          <action-btn v-else 
-            @click="loginUser" 
-            text="Sign in" 
-            type="primary"
-          />
+          <action-btn v-else @click="loginUser" text="Sign in" type="primary" />
         </div>
       </div>
+      <sub-nav />
     </div>
   </header>
 </template>
@@ -27,24 +27,27 @@
 <script>
 import ActionBtn from '@/components/ActionBtn.vue';
 import ProfileImg from '@/components/ProfileImg.vue';
+import SubNav from '@/components/SubNav.vue';
+
 export default {
   name: 'MainNav',
-  components:{
+  components: {
     ActionBtn,
-    ProfileImg
+    ProfileImg,
+    SubNav,
   },
   data() {
     return {
       company: 'Cata Careers',
-      url : "https://careers.google.com/",
-      navBarItems:["Teams","Location","Life at Cata Corp","How we hire","Students","Jobs"],
-      isLoggedin: false
+      url: 'https://careers.google.com/',
+      navBarItems: ['Teams', 'Location', 'Life at Cata Corp', 'How we hire', 'Students', 'Jobs'],
+      isLoggedin: false,
     };
-  }, 
+  },
   methods: {
-    loginUser () {
-      this.isLoggedin = true
-    }
-  }
+    loginUser() {
+      this.isLoggedin = true;
+    },
+  },
 };
 </script>
