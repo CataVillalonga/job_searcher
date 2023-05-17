@@ -18,7 +18,7 @@ describe('MainNav', () => {
 });
 
 describe('when the users logs in', () => {
-  it('Displays user profile picture', async () => {
+  it('Displays user profile picture', async() => {
     render(MainNav);
     let profileImg = screen.queryByRole('img', {
       name: /User profile image/i

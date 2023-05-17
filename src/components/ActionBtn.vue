@@ -6,14 +6,22 @@
 <script>
 export default {
   name: 'ActionBtn',
-
-  props:['text','type'],
+  //props can have configuration setting obj
+  props:{
+    text:{
+      type: String,
+      required: true // if set to true the text prop is mandatory
+    },
+    type:{
+      type: String,
+      required: false, // if set to true the text prop is optional
+      default:'primary' // sets the optional(required:false) to default to X value if prop is not speficied
+    }
+  },
   computed: {
     buttonClass () {
       return {
-        primary : this.type === "primary",
-        secondary: this.type === "secondary",
-        [this.type]:true //dinamic obj key sntax ( this will translate to "whatever the type prop is":true / same as lines above but way shorter syntax! )
+        [this.type]:true,
       }
     }
   }
