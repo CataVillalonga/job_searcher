@@ -6,16 +6,23 @@
 <script>
 export default {
   name: 'ActionBtn',
-  //props can have configuration setting obj
   props:{
     text:{
       type: String,
-      required: true // if set to true the text prop is mandatory
+      required: true
     },
     type:{
       type: String,
-      required: false, // if set to true the text prop is optional
-      default:'primary' // sets the optional(required:false) to default to X value if prop is not speficied
+      required: false, 
+      default:'primary',
+      //validator method expects one arg that will represent the props value(in this case is "primary/secundary")
+      //in this case we will use this method to check that if any other string is pass in the type prop , an error should be thrown
+      validator(value) {
+        //validator expects a boolean to be return
+        //if value is "error" includes method will return FAlSE and validator will work
+        //if value is "primary" and method will return true 
+        return['primary','secundary'].includes(value)
+      }
     }
   },
   computed: {
