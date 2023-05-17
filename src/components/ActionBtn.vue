@@ -12,7 +12,8 @@ export default {
     buttonClass () {
       return {
         primary : this.type === "primary",
-        secondary: this.type === "secondary"
+        secondary: this.type === "secondary",
+        [this.type]:true //dinamic obj key sntax ( this will translate to "whatever the type prop is":true / same as lines above but way shorter syntax! )
       }
     }
   }
