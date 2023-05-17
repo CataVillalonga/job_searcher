@@ -6,14 +6,14 @@
 <script>
 export default {
   name: 'ActionBtn',
-  //vue auto translate kebab-case till upperCase
-  props:['text','isPrimary'],
+
+  props:['text','type'],
   // defining computed property 
   computed: {
     buttonClass () {
       return {
-        primary : this.isPrimary,
-        secondary: !this.isPrimary
+        primary : this.type === "primary",
+        secondary: this.type === "secondary"
       }
     }
   }
