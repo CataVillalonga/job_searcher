@@ -8,7 +8,6 @@ export default {
   name: 'ActionBtn',
 
   props:['text','type'],
-  // defining computed property 
   computed: {
     buttonClass () {
       return {
