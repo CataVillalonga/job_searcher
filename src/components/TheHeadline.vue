@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import nextElementInList from '@/utils/nextElementInList.js';
 export default {
   name: 'TheHeadline',
   data() {
@@ -21,12 +22,6 @@ export default {
   computed: {
     actionClasses() {
       return {
-        //static example
-        build: this.action === 'Build',
-        create: this.action === 'Create',
-        design: this.action === 'Design',
-        code: this.action === 'Code',
-        //dinamic example
         [this.action.toLowerCase()]: true,
       };
     },
@@ -42,10 +37,7 @@ export default {
     changeTitle() {
       this.interval = setInterval(() => {
         const actions = ['Build', 'Create', 'Design', 'Code'];
-        const currentAccionIndex = actions.indexOf(this.action);
-        const nextActionIndex = (currentAccionIndex + 1) % 4;
-        const nextAction = actions[nextActionIndex];
-        this.action = nextAction;
+        this.action = nextElementInList(actions, this.action);
       }, 3000);
     },
   },
