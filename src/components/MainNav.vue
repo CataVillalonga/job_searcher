@@ -1,5 +1,6 @@
 <template>
-  <header class="w-full text-sm">
+  <!-- mixing existing classes with dinamically changing classes with v-bind -->
+  <header :class="['w-full', 'text-sm', headerHeightClass]">
     <div class="fixed left-0 top-0 h-16 w-full bg-white">
       <div class="b mx-auto flex h-full flex-nowrap border-b border-solid border-brand-gray-1 px-8">
         <a :href="url" class="flex h-full items-center text-xl">{{ company }}</a>
@@ -19,7 +20,7 @@
           <action-btn v-else @click="loginUser" text="Sign in" type="primary" />
         </div>
       </div>
-      <sub-nav />
+      <sub-nav v-if="isLoggedin" />
     </div>
   </header>
 </template>
@@ -43,6 +44,15 @@ export default {
       navBarItems: ['Teams', 'Location', 'Life at Cata Corp', 'How we hire', 'Students', 'Jobs'],
       isLoggedin: false,
     };
+  },
+  //Dinamically chaging the height of the header for the display of the main component
+  computed: {
+    headerHeightClass() {
+      return {
+        'h-16': !this.isLoggedin,
+        'h-32': this.isLoggedin,
+      };
+    },
   },
   methods: {
     loginUser() {
