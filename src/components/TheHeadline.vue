@@ -14,17 +14,20 @@ export default {
   name: 'TheHeadline',
   data() {
     return {
-      action: 'build',
+      action: 'Build',
       interval: null,
     };
   },
   computed: {
     actionClasses() {
       return {
+        //static example
         build: this.action === 'Build',
         create: this.action === 'Create',
         design: this.action === 'Design',
         code: this.action === 'Code',
+        //dinamic example
+        [this.action.toLowerCase()]: true,
       };
     },
   },
