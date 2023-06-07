@@ -4,8 +4,7 @@
     <div class="flex h-full flex-1 flex-nowrap text-base font-light">
       <div class="relative flex h-full flex-1 items-center pr-3">
         <label class="absolute -top-10 left-0">Role</label>
-        <!-- $event is THE SAME AS THE PAYLOAD this option is shorter!!  -->
-        <text-input placeholder="software engineer" @handle-input="role = $event" />
+        <text-input placeholder="software engineer" :value="role" @handle-input="role = $event" />
       </div>
       <span
         class="border-brand-grey-3 bg-brand-grey-2 flex h-full items-center border-l border-r px-3"
@@ -14,7 +13,7 @@
       </span>
       <div class="relative flex h-full flex-1 items-center pl-3">
         <label class="absolute -top-10 left-0">Where?</label>
-        <text-input placeholder="Stockholm" @handle-input="updateLocation" />
+        <text-input placeholder="Stockholm" :value="location" @handle-input="location = $event" />
       </div>
     </div>
     <action-btn text="Search" type="secondary" class="rounded-r-3xl" />
@@ -31,20 +30,10 @@ export default {
     TextInput,
   },
   data() {
-    TextInput;
     return {
       role: '',
       location: '',
     };
-  },
-  methods: {
-    // using the method avobe we dont need this anymore !
-    // updateRole(payload) {
-    //   this.role = payload;
-    // },
-    updateLocation(payload) {
-      this.location = payload;
-    },
   },
 };
 </script>
