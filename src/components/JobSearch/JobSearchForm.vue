@@ -4,7 +4,7 @@
     <div class="flex h-full flex-1 flex-nowrap text-base font-light">
       <div class="relative flex h-full flex-1 items-center pr-3">
         <label class="absolute -top-10 left-0">Role</label>
-        <text-input placeholder="software engineer" :value="role" @handle-input="role = $event" />
+        <text-input placeholder="software engineer" v-model="role" />
       </div>
       <span
         class="border-brand-grey-3 bg-brand-grey-2 flex h-full items-center border-l border-r px-3"
@@ -13,7 +13,7 @@
       </span>
       <div class="relative flex h-full flex-1 items-center pl-3">
         <label class="absolute -top-10 left-0">Where?</label>
-        <text-input placeholder="Stockholm" :value="location" @handle-input="location = $event" />
+        <text-input placeholder="Stockholm" v-model="location" />
       </div>
     </div>
     <action-btn text="Search" type="secondary" class="rounded-r-3xl" />
