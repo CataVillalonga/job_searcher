@@ -5,9 +5,8 @@
       <div class="relative flex h-full flex-1 items-center pr-3">
         <label class="absolute -top-10 left-0">Role</label>
         <input
+          v-model="role"
           type="text"
-          :value="role"
-          @:input="updateRole"
           placeholder="software engineer"
           class="w-full text-lg font-normal focus:outline-none"
         />
@@ -21,8 +20,7 @@
         <label class="absolute -top-10 left-0">Where?</label>
         <input
           type="text"
-          :value="location"
-          @:input="updatelocation"
+          v-model="location"
           placeholder="Stockholm"
           class="w-full text-lg font-normal focus:outline-none"
         />
@@ -44,14 +42,6 @@ export default {
       role: '',
       location: '',
     };
-  },
-  methods: {
-    updateRole(e) {
-      this.role = e.target.value;
-    },
-    updatelocation(e) {
-      this.location = e.target.value;
-    },
   },
 };
 </script>
